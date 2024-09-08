@@ -33,6 +33,7 @@ const Login = () => {
     e.preventDefault();
     if (validateForm()) {
       console.log("Form submitted with: ", { email, password });
+      navigate("/dashboard");
     }
   };
 

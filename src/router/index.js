@@ -1,4 +1,5 @@
 import React, { lazy } from "react";
+import DashboardBody from "../components/dashboard/DashbardBody";
 import Dashboard from "../components/dashboard/Dashboard";
 import Home from "../components/home/Home";
 import Login from "../components/login/Login";
@@ -22,7 +23,7 @@ const ROUTES = (props) => {
       path: "/dashboard",
       key: "DASHBOARD",
       exact: true,
-      component: <Dashboard />,
+      component: <DashboardBody />,
     },
     {
       path: "*",

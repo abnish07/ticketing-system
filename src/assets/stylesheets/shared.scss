@@ -1,0 +1,22 @@
+.toast-header {
+  justify-content: space-between !important;
+}
+
+.tost-style {
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.clr-error {
+  background-color: #d82833;
+}
+
+.clr-success {
+  background-color: green;
+}
+
+.clr-white {
+  color: #fff;
+}
