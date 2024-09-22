@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "../src/assets/stylesheets/webpixels.css";
 import "./App.css";
 import "./assets/stylesheets/shared.scss";
 import ROUTES from "./router";
@@ -54,26 +55,26 @@ function App(props) {
 
   const hideSidebarPaths = ["/login", "/signup", "/"];
   const isSidebarHidden = hideSidebarPaths.includes(window.location.pathname);
-
   return (
     <div className="application-wrapper d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
       <Router>
         <Loader />
-        {!isSidebarHidden && <SidebarNavigation />}
         {toastOpen.isOpen && (
           <div>
             <Toaster toastOpen={toastOpen} onClose={hideToaster} />
           </div>
         )}
         <Routes>
-          {ROUTES(props)?.map((route) => (
-            <Route
-              path={route.path}
-              key={route.key}
-              exact={route.exact}
-              element={route.component}
-            />
-          ))}
+          <Route element={!isSidebarHidden && <SidebarNavigation />}>
+            {ROUTES(props)?.map((route) => (
+              <Route
+                path={route.path}
+                key={route.key}
+                exact={route.exact}
+                element={route.component}
+              />
+            ))}
+          </Route>
         </Routes>
       </Router>
     </div>

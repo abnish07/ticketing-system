@@ -50,6 +50,7 @@ const Signup = () => {
     if (validateForm()) {
       console.log("Form submitted with: ", formData);
       // Handle form submission
+      navigate("/login");
     }
   };
 
@@ -62,15 +63,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center min-vh-100 bg-light position-relative">
-      {/* Back Button in the top-left corner */}
-      <button
-        type="button"
-        className="btn btn-secondary position-absolute"
-        style={{ top: "20px", left: "20px" }}
-        onClick={handleBack}
-      >
-        <i className="bi bi-arrow-left"></i> Back
+    <div className=" main-container">
+      <button type="button" className="btn mb-2" onClick={handleBack}>
+        <i className="bi bi-arrow-left"></i>
       </button>
       <div
         className="card p-4 shadow-lg"

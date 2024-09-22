@@ -10,13 +10,7 @@ import {
   CONTACT_INFO_PATH,
 } from "../constants/endpoints";
 
-export const sidebarMenuItems = [
-  "dashboard",
-  "workshop",
-  "auftrag",
-  "leads",
-  "contactInfo",
-];
+export const sidebarMenuItems = ["dashboard", "contactInfo"];
 export const menuItems = {
   dashboard: {
     icon: <i className="bi bi-house" />,

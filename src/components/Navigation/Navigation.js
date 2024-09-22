@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { menuItems, sidebarMenuItems } from "../../helper/sidebarConstants";
 import Loader from "../common/Loader";
-// import { ACCOUNT, LOGOUT } from "../../constants/siteConstant";
 
 function SidebarNavigation() {
   const [selectedMenu, setSelectedMenu] = useState("");
-  console.log("navigation+++");
   const handleMenuClick = (menu) => {
     setSelectedMenu(menu);
   };
 
   const handleGoToHomePage = () => {
     window.location.href = "/";
+  };
+
+  const handleLogout = () => {
+    handleGoToHomePage();
   };
 
   return (
@@ -35,7 +37,7 @@ function SidebarNavigation() {
           </button>
           <div className="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0 vertical-center cursor-pointer">
             <img
-              src="https://d3brnpc5nhvc9v.cloudfront.net/static-assets-helloparts/logos/helloparts-Logo-x.png"
+              src="https://www.coworkingstudio.in/wp-content/uploads/2022/09/cropped-Coworking-Studio-logo-001.png"
               alt="logo"
               className="logo"
               onClick={handleGoToHomePage}
@@ -65,7 +67,7 @@ function SidebarNavigation() {
             <div className="mt-auto" />
             <ul className="navbar-nav">
               <li className="nav-item">
-                {/* <Link
+                <Link
                   className={`nav-link ${
                     selectedMenu === "accounts" ||
                     window.location.pathname === "/accounts"
@@ -75,22 +77,22 @@ function SidebarNavigation() {
                   to="accounts"
                   onClick={() => handleMenuClick("accounts")}
                 >
-                  <i className="bi bi-person-square" /> {ACCOUNT}
+                  <i className="bi bi-person-square" /> Account
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="#">
-                  <i className="bi bi-box-arrow-left" /> {LOGOUT}
-                </Link> */}
+                <Link className="nav-link" onClick={handleLogout}>
+                  <i className="bi bi-box-arrow-left" /> Logout
+                </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <div className="h-screen flex-grow-1 overflow-y-lg-auto">
-        {/* <React.Suspense fallback={<Loader />}>
+        <React.Suspense fallback={<Loader />}>
           <Outlet />
-        </React.Suspense> */}
+        </React.Suspense>
       </div>
     </>
   );

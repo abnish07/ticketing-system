@@ -23,7 +23,7 @@ const ROUTES = (props) => {
       path: "/dashboard",
       key: "DASHBOARD",
       exact: true,
-      component: <DashboardBody />,
+      component: <Dashboard />,
     },
     {
       path: "*",

@@ -17,7 +17,10 @@ const Home = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+    <div
+      className="d-flex justify-content-center align-items-center min-vh-100"
+      style={{ margin: "0 auto" }}
+    >
       <div
         className="card p-4 shadow-lg"
         style={{ maxWidth: "400px", width: "100%" }}
